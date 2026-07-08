@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    margin: 0;
+    background: #0a0a0f;
+    color: #f0ede8;
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  #root {
+    min-height: 100vh;
+  }
+}
+
+/* Companion floating widget — panel only appears on hover; the rest of the
+   window stays fully transparent so just the character is pinned on screen. */
+.companion-panel {
+  background: rgba(18, 14, 28, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* Make the whole companion window background transparent */
+body.companion-window {
+  background: transparent !important;
+  min-height: unset;
+}
+body.companion-window #root {
+  min-height: unset;
+}
